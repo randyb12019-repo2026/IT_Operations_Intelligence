@@ -1,0 +1,34 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos procesados
+data/raw/incident_event_log.csv
+data/processed/incident_event_log_transformado.csv
+data/final/comparacion_modelos.csv
+data/final/predicciones_incidencias.csv
+data/final/incidentes_riesgo_sla.csv
+reports/graphics/*
+
+# Variables de entorno
+.env
+
+# Mantener carpetas
+!reports/.gitkeep
+!reports/graphics/.gitkeep
+!data/final/.gitkeep
+!data/processed/.gitkeep
+!data/raw/.gitkeep
+
+# Modelos
+*.pkl
+
+# PDF generado
+Presentacion_IT_Operations_Intelligence.pdf
