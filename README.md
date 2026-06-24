@@ -55,6 +55,8 @@ streamlit run app/streamlit_app.py
 
 ### Con Docker
 
+> **Prerrequisito:** Tener [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y en ejecución.
+
 ```bash
 # 1. Construir la imagen
 docker build -t it-operations-intelligence .
