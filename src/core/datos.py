@@ -32,6 +32,14 @@ def validar_datos(comparacion, predicciones, datos_incidencias):
     if errores:
         st.error("No se encontraron los archivos necesarios.")
         st.markdown("Archivos faltantes:\n- " + "\n- ".join(errores))
+        st.markdown("---")
+        st.markdown("""
+        **Solución local:** Ejecuta los notebooks en orden
+        (`notebooks/01_` a `05_`) para generar los CSVs.
+
+        **Solución Docker:** Asegúrate de que los CSVs existen en tu máquina
+        y reconstruye la imagen con `docker build -t it-operations-intelligence .`.
+        """)
         st.stop()
 
     if comparacion.empty:
