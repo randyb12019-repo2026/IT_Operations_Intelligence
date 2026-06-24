@@ -446,7 +446,7 @@ IT_Operations_Intelligence/
 
 Proyecto desarrollado como trabajo final del Bootcamp de Data Analytics e Inteligencia Artificial.
 
-**Autor:** Randy Bonucci Martín
+**Autor:** Randy Bonucci
 
 **Especialización:** Data Analytics, Infraestructuras IT y Machine Learning.
 

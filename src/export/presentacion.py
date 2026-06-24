@@ -192,7 +192,7 @@ def _slide_01_portada(c):
     c.setFillColor(GRIS)
     c.setFont("Helvetica", 12)
     c.drawCentredString(PAGE_W / 2, PAGE_H - 6.3 * inch,
-                        "Autor: Ing. Randy Bonucci Martin")
+                        "Autor: Ing. Randy Bonucci")
     _draw_footer(c)
 
 
