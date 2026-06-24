@@ -15,7 +15,7 @@ Proyecto de análisis de datos y aprendizaje automático orientado al estudio de
 
 ### Pasos
 
-`ash
+```bash
 # 1. Clonar el repositorio
 git clone https://github.com/randyb12019-repo2026/IT_Operations_Intelligence.git
 cd IT_Operations_Intelligence
@@ -49,19 +49,19 @@ streamlit run app/streamlit_app.py
 
 # 8. (Opcional) Ejecutar tests
 .venv\Scripts\python.exe -m pytest tests/ -v
-`
+```
 
 > **Nota:** GitHub rechaza archivos .pkl por seguridad, por lo que el modelo models/modelo_sla.pkl está excluido del repositorio (.gitignore). Debes generar este archivo ejecutando los notebooks localmente (paso 6). Sin este archivo, el dashboard mostrará un mensaje indicando que no se encontró el modelo, pero el resto de la aplicación funciona con normalidad.
 
 ### Con Docker
 
-`ash
+```bash
 # 1. Construir la imagen
 docker build -t it-operations-intelligence .
 
 # 2. Ejecutar el contenedor
 docker run -p 8501:8501 it-operations-intelligence
-`
+```
 
 Luego abrir http://localhost:8501 en el navegador.
 
@@ -130,38 +130,30 @@ Enlace: [https://www.kaggle.com/datasets/shamiulislamshifat/it-incident-log-data
 
 ## Arquitectura del Proyecto
 
-`	ext
+```
 Dataset Original (IT Incident Log)
-              |
-              ▼
-Exploración y Limpieza
-(Notebook 01)
-              |
-              ▼
-Transformación y
-Feature Engineering
-(Notebook 02)
-              |
-              ▼
-Análisis Exploratorio
-de Datos (EDA)
-(Notebook 03)
-              |
-              ▼
-Modelado Predictivo
-(Notebook 04)
-              |
-              ▼
-Exportación de Resultados
-y Conclusiones
-(Notebook 05)
-`
+         |
+         ▼
+Exploración y Limpieza (Notebook 01)
+         |
+         ▼
+Transformación y Feature Engineering (Notebook 02)
+         |
+         ▼
+Análisis Exploratorio de Datos - EDA (Notebook 03)
+         |
+         ▼
+Modelado Predictivo (Notebook 04)
+         |
+         ▼
+Exportación de Resultados y Conclusiones (Notebook 05)
+```
 
 ---
 
 ## Ciclo de Vida del Proyecto
 
-`	ext
+```
 Comprensión del Negocio
          |
          ▼
@@ -190,7 +182,7 @@ Insights
          |
          ▼
 Conclusiones
-`
+```
 
 ---
 
@@ -327,28 +319,28 @@ Conclusiones
 
 ## Estructura del Proyecto
 
-`	ext
+```
 IT_Operations_Intelligence/
 │
 ├── app/
-│   └── streamlit_app.py                    # Aplicación web Streamlit
+│   └── streamlit_app.py
 │
 ├── dashboard/
 │   ├── __init__.py
-│   └── dashboard.py                        # Orquestador del dashboard
+│   └── dashboard.py
 │
 ├── data/
 │   ├── raw/
-│   │   └── incident_event_log.csv          # Dataset original
+│   │   └── incident_event_log.csv
 │   ├── processed/
-│   │   └── incident_event_log_transformado.csv  # Dataset transformado
+│   │   └── incident_event_log_transformado.csv
 │   └── final/
-│       ├── comparacion_modelos.csv          # Comparación de modelos
-│       ├── predicciones_incidencias.csv     # Predicciones del modelo
-│       └── incidentes_riesgo_sla.csv        # Tickets en riesgo
+│       ├── comparacion_modelos.csv
+│       ├── predicciones_incidencias.csv
+│       └── incidentes_riesgo_sla.csv
 │
 ├── models/
-│   └── modelo_sla.pkl                      # Modelo entrenado
+│   └── modelo_sla.pkl
 │
 ├── notebooks/
 │   ├── 01_exploracion_y_limpieza_dataset.ipynb
@@ -358,36 +350,36 @@ IT_Operations_Intelligence/
 │   └── 05_exportacion_resultados.ipynb
 │
 ├── reports/
-│   └── graphics/                           # Gráficos generados
+│   └── graphics/
 │
-├── src/                                    # Módulos fuente Python
-│   ├── core/                               # Lógica de negocio y datos
+├── src/
+│   ├── core/
 │   │   ├── datos.py
 │   │   ├── detectores.py
 │   │   ├── metricas.py
 │   │   └── conclusiones.py
-│   ├── ui/                                 # Componentes de interfaz
+│   ├── ui/
 │   │   ├── cabecera.py
 │   │   ├── estilos.py
 │   │   ├── plantilla.py
 │   │   └── sidebar.py
-│   ├── pages/                              # Páginas del dashboard
+│   ├── pages/
 │   │   ├── resumen_ejecutivo.py
 │   │   ├── estado_infraestructura.py
 │   │   ├── comparacion_modelos.py
 │   │   └── predicciones.py
-│   └── export/                             # Generación de reportes
+│   └── export/
 │       ├── presentacion.py
 │       └── generar_presentacion.py
 │
-├── tests/                                  # Tests unitarios
+├── tests/
 │
-├── LICENCE.md                              # Licencia MIT
-├── README.md                               # Este archivo
-├── requirements.txt                        # Dependencias del proyecto
-├── requirements-dev.txt                    # Dependencias de desarrollo
-└── Dockerfile                              # Configuración Docker
-`
+├── LICENCE.md
+├── README.md
+├── requirements.txt
+├── requirements-dev.txt
+└── Dockerfile
+```
 
 ---
 
@@ -395,18 +387,18 @@ IT_Operations_Intelligence/
 
 | Fase | Descripción | Notebook |
 |---|---|---|
-| Fase 1 | Comprensión del Negocio |  1_exploracion_y_limpieza_dataset.ipynb y README |
-| Fase 2 | Comprensión de los Datos |  1_exploracion_y_limpieza_dataset.ipynb |
-| Fase 3 | Exploración Inicial de los Datos |  1_exploracion_y_limpieza_dataset.ipynb |
-| Fase 4 | Limpieza y Preparación de Datos |  1_exploracion_y_limpieza_dataset.ipynb |
-| Fase 5 | Transformación y Feature Engineering |  2_transformacion_y_feature_engineering.ipynb |
-| Fase 6 | Análisis Exploratorio de Datos (EDA) |  3_analisis_exploratorio_EDA.ipynb |
-| Fase 7 | Preparación para Machine Learning |  4_modelo_predictivo.ipynb |
-| Fase 8 | Modelado Predictivo |  4_modelo_predictivo.ipynb |
-| Fase 9 | Comparación y Evaluación de Modelos |  4_modelo_predictivo.ipynb |
-| Fase 10 | Interpretación de Resultados |  4_modelo_predictivo.ipynb |
-| Fase 11 | Exportación y Validación de Resultados |  5_exportacion_resultados.ipynb |
-| Fase 12 | Conclusiones y Recomendaciones |  5_exportacion_resultados.ipynb y README |
+| Fase 1 | Comprensión del Negocio | 01_exploracion_y_limpieza_dataset.ipynb y README |
+| Fase 2 | Comprensión de los Datos | 01_exploracion_y_limpieza_dataset.ipynb |
+| Fase 3 | Exploración Inicial de los Datos | 01_exploracion_y_limpieza_dataset.ipynb |
+| Fase 4 | Limpieza y Preparación de Datos | 01_exploracion_y_limpieza_dataset.ipynb |
+| Fase 5 | Transformación y Feature Engineering | 02_transformacion_y_feature_engineering.ipynb |
+| Fase 6 | Análisis Exploratorio de Datos (EDA) | 03_analisis_exploratorio_EDA.ipynb |
+| Fase 7 | Preparación para Machine Learning | 04_modelo_predictivo.ipynb |
+| Fase 8 | Modelado Predictivo | 04_modelo_predictivo.ipynb |
+| Fase 9 | Comparación y Evaluación de Modelos | 04_modelo_predictivo.ipynb |
+| Fase 10 | Interpretación de Resultados | 04_modelo_predictivo.ipynb |
+| Fase 11 | Exportación y Validación de Resultados | 05_exportacion_resultados.ipynb |
+| Fase 12 | Conclusiones y Recomendaciones | 05_exportacion_resultados.ipynb y README |
 
 ---
 
