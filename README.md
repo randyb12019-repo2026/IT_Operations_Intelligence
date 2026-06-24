@@ -36,7 +36,7 @@ pip install -r requirements-dev.txt
 # 5. Descargar el dataset desde Kaggle y colocarlo en:
 #    data/raw/
 #    Fuente: https://www.kaggle.com/datasets/shamiulislamshifat/it-incident-log-dataset
-
+#    Debe quedar asi en la carpeta: data/raw/incident_event_log.csv
 # 6. Ejecutar los notebooks en orden:
 #    notebooks/01_exploracion_y_limpieza_dataset.ipynb
 #    notebooks/02_transformacion_y_feature_engineering.ipynb
