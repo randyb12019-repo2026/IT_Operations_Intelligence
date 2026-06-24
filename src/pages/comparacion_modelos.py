@@ -15,6 +15,18 @@ def comparacion_modelos(seccion, comparacion, col_modelo, col_f1):
 
     st.dataframe(comparacion.round(4))
 
+    st.markdown("""
+    <div style="font-size:0.85rem; color:#6b7280; margin-bottom:1rem;">
+    La tabla muestra las métricas de rendimiento de cada modelo evaluado sobre
+    los datos de prueba. <b>Accuracy</b> mide el porcentaje global de aciertos,
+    <b>Precision</b> la proporción de positivos correctos sobre el total de
+    predicciones positivas, <b>Recall</b> la capacidad de detectar los casos
+    positivos reales, y <b>F1-Score</b> el balance armónico entre Precision y
+    Recall. Dado el desbalance de clases (6.5% de incumplimientos), el F1-Score
+    es la métrica más representativa.
+    </div>
+    """, unsafe_allow_html=True)
+
     metricas = [c for c in comparacion.columns if c.lower() not in ["modelo", "model"]]
     for metrica in metricas:
         fig = px.bar(comparacion, x=col_modelo, y=metrica,
